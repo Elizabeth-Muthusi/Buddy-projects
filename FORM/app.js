@@ -31,7 +31,9 @@ confirmNoError(lastName);
  if( emailValue=== ""){
 checkError(email, "Looks like this is not an email");
 changePlaceholder();
- }else{
+ }else if(!isEmailValid(emailValue)){
+  checkError(email, "Email is not valid");}
+  else{
 confirmNoError(email);
  }
  // Password check
@@ -58,4 +60,9 @@ controls.className = 'form__control clear';
 // change placeholder text
 function changePlaceholder(){
  email.setAttribute("placeholder", "email@example/com");
+}
+
+// check if email is valid
+function isEmailValid(email){
+ return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }

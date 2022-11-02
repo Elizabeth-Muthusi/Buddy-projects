@@ -57,10 +57,11 @@ body:before {
 
 }
 .header__text{
-margin: 5rem;
+margin: auto;
+max-width: 36rem;
 }
 .header__text h2{
- font-size: 5rem;
+ font-size: 4.6rem;
  line-height: 1;
  margin-bottom: var(--text-bottom);
 }
@@ -182,13 +183,13 @@ button:hover{
  text-transform: capitalize;
 }
 
-@media (max-width:40rem){
+@media (max-width:45em){
  .header{
    grid-template-columns: 1fr;
    grid-template-rows: auto 50rem;
  }
   .header__text {
-   margin: 1rem 0;
+   margin: 1rem auto;
    text-align: center;
 
   }
